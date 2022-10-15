@@ -55,12 +55,12 @@
             bindings = <&kp RIGHT>;
         };
         combo_up {
-            timeout-ms = <20>;
+            timeout-ms = <30>;
             key-positions = <6 7 8>;
             bindings = <&kp UP>;
         };
         combo_down {
-            timeout-ms = <20>;
+            timeout-ms = <30>;
             key-positions = <16 17 18>;
             bindings = <&kp DOWN>;
         };
