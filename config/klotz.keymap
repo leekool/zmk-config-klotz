@@ -35,7 +35,7 @@
             bindings = <
                 &none          &kp W          &kp F          &kp P          &lt BTC B      &kp J          &kp L          &kp U          &kp Y          &none
                 &hl LCTRL R    &hl LALT S     &hl LGUI T     &hl LSHFT H    &hl RALT K     &hr RALT X     &hr RSHFT N    &hr RGUI A     &hr LALT I     &hr RCTRL O
-                &none          &kp C          &kp G          &kp D          &none          &none          &kp M          &comsem        &kp dotcol     &none
+                &none          &kp C          &kp G          &kp D          &none          &none          &kp M          &comsem        &dotcol        &none
                                                              &lt NUM ESC    &lt NAV SPACE  &lt SYM E      &lt FUN ENTER
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
