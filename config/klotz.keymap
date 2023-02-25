@@ -14,90 +14,7 @@
 //▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
        
 
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/outputs.h>
-
-#define COL 0
-#define QWE 1
-#define NUM 2
-#define NAV 3
-#define SYM 4
-#define FUN 5
-
-
-&lt {
-    quick_tap_ms = <200>;
-};
-
-&caps_word {
-    continue-list = <UNDERSCORE MINUS BSPC LSHFT RSHFT>;
-};
-
-
-/ {
-    combos {
-        compatible = "zmk,combos";
-        combo_caps-word {
-            timeout-ms = <30>;
-            key-positions = <13 16>;
-            bindings = <&caps_word>;
-        };
-        combo_left {
-            timeout-ms = <20>;
-            key-positions = <16 17>;
-            bindings = <&kp LEFT>;
-        };
-        combo_right {
-            timeout-ms = <20>;
-            key-positions = <17 18>;
-            bindings = <&kp RIGHT>;
-        };
-        combo_up {
-            timeout-ms = <30>;
-            key-positions = <6 7 8>;
-            bindings = <&kp UP>;
-        };
-        combo_down {
-            timeout-ms = <30>;
-            key-positions = <16 17 18>;
-            bindings = <&kp DOWN>;
-        };
-    };
-};
-
-
-/ {
-    behaviors {
-        hl: homerow_mods_left {
-            compatible = "zmk,behavior-hold-tap";
-            label = "homerow mods left";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <100>;
-            // global-quick-tap;
-            bindings = <&kp>, <&kp>;
-            // opposite side hand keys
-            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 32 33>;
-        };
-
-        hr: homerow_mods_right {
-            compatible = "zmk,behavior-hold-tap";
-            label = "homerow mods right";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <100>;
-            // global-quick-tap;
-            bindings = <&kp>, <&kp>;
-            // opposite side hand keys
-            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31>;
-        };
-
-    };
-
+#include "base_5x3T2.h"
 
 // KLOTZ key numbers
 //  ___________________________________       ___________________________________
@@ -111,25 +28,14 @@
     keymap {
         compatible = "zmk,keymap";
 
-        colemak {
-            label = "COL";
+        aptmak {
+            label = "APT";
 
             bindings = <
-                &kp Q          &kp W          &kp F          &kp P          &kp B          &kp J          &kp L          &kp U          &kp Y          &kp SEMI
-                &hl LCTRL A    &hl LALT R     &hl LGUI S     &hl LSHFT T    &hl RALT G     &hr RALT M     &hr RSHFT N    &hr RGUI E     &hr LALT I     &hr RCTRL O
-                &kp Z          &kp X          &kp C          &kp D          &kp V          &kp K          &kp H          &kp COMMA      &kp DOT        &kp SLASH
-                                                             &lt NUM ESC    &lt NAV SPACE  &lt SYM ENTER  &lt FUN BSPC
-            >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-        };
-        qwerty {
-            label = "QWE";
-
-            bindings = <
-                &kp Q          &kp W          &kp E          &kp R          &kp T          &kp Y          &kp U          &kp I          &kp O          &kp P
-                &hl LCTRL A    &hl LALT S     &hl LGUI D     &hl LSHFT F    &hl RALT G     &hr RALT H     &hr RSHFT J    &hr RGUI K     &hr LALT L     &hr RCTRL SEMI
-                &kp Z          &kp X          &kp C          &kp V          &kp B          &kp N          &kp M          &kp COMMA      &kp DOT        &kp SLASH
-                                                             &lt NUM ESC    &lt NAV SPACE  &lt SYM ENTER  &lt FUN BSPC
+                &none          &kp W          &kp F          &kp P          &lt BTC B      &kp J          &kp L          &kp U          &kp Y          &none
+                &hl LCTRL R    &hl LALT S     &hl LGUI T     &hl LSHFT H    &hl RALT K     &hr RALT X     &hr RSHFT N    &hr RGUI A     &hr LALT I     &hr RCTRL O
+                &none          &kp C          &kp G          &kp D          &none          &none          &kp M          &comsem        &kp dotcol     &none
+                                                             &lt NUM ESC    &lt NAV SPACE  &lt SYM E      &lt FUN ENTER
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
@@ -137,10 +43,10 @@
             label = "NUM";
 
             bindings = <
-                &none          &none          &none          &none          &none          &kp PLUS       &kp N7         &kp N8         &kp N9         &kp ASTERISK
-                &kp LCTRL      &kp LALT       &kp LGUI       &kp LSHFT      &none          &kp MINUS      &kp N4         &kp N5         &kp N6         &kp SLASH
-                &none          &none          &none          &none          &none          &kp EQUAL      &kp N1         &kp N2         &kp N3         &kp DOT
-                                                             &trans         &trans         &kp SPACE      &kp N0
+                &none          &kp N9         &kp N8         &kp N7         &none          &kp PLUS       &kp N7         &kp N8         &kp N9         &kp ASTERISK
+                &kp LCTRL      &hl LALT N3    &hl LGUI N2    &hl LSHFT N1   &hl RALT N0    &kp MINUS      &kp N4         &kp N5         &kp N6         &kp SLASH
+                &none          &kp N6         &kp N5         &kp N4         &none          &kp EQUAL      &kp N1         &kp N2         &kp N3         &kp DOT
+                                                             &trans         &trans         &kp E          &kp N0
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
@@ -148,10 +54,10 @@
             label = "NAV";
 
             bindings = <
-                &none          &none          &none          &none          &kp C_VOL_DN   &kp C_VOL_UP   &kp BSPC       &kp DEL        &kp INSERT     &kp C_PLAY_PAUSE
-                &kp LCTRL      &kp LALT       &kp LGUI       &kp LSHFT      &kp C_MUTE     &kp LEFT       &kp DOWN       &kp UP         &kp RIGHT      &kp TAB
-                &none          &none          &none          &none          &kp C_BRI_DN   &kp C_BRI_UP   &kp HOME       &kp PG_DN      &kp PG_UP      &kp END
-                                                             &trans         &trans         &trans         &trans
+                &none          &kp INSERT     &kp UP         &kp BSPC        &kp C_VOL_DN   &kp C_VOL_UP   &kp BSPC       &kp DEL        &kp INSERT     &kp C_PP
+                &kp LCTRL      &hl LALT LEFT  &hl LGUI DOWN  &hl LSHFT RIGHT &kp C_MUTE     &kp LEFT       &kp DOWN       &kp UP         &kp RIGHT      &kp TAB
+                &none          &kp HOME       &kp PG_DN      &kp END         &kp C_BRI_DN   &kp C_BRI_UP   &kp HOME       &kp PG_UP      &kp END        &none
+                                                             &trans          &trans         &trans         &trans
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
@@ -159,10 +65,10 @@
             label = "SYM";
 
             bindings = <
-                &kp GRAVE      &none          &kp DQT        &none          &kp LBRC       &kp RBRC       &kp BACKSLASH  &kp PIPE       &kp LT         &kp GT
-                &kp EXCL       &kp AT         &kp HASH       &kp DOLLAR     &kp LPAR       &kp RPAR       &kp AMPERSAND  &kp ASTERISK   &kp PERCENT    &kp CARET
-                &kp TILDE      &none          &kp SQT        &kp UNDERSCORE &kp LBKT       &kp RBKT       &kp MINUS      &kp PLUS       &kp EQUAL      &none
-                                                             &trans         &trans         &trans         &trans
+                &none          &kp GRAVE      &kp DQT        &kp RA(LS(SEMI)) &kp LBRC       &kp RBRC       &kp BACKSLASH  &kp PIPE       &kp LT         &kp GT
+                &kp EXCL       &kp AT         &kp HASH       &kp DOLLAR       &kp LPAR       &kp RPAR       &kp AMPERSAND  &kp ASTERISK   &kp PERCENT    &kp CARET
+                &none          &kp TILDE      &kp SQT        &kp UNDERSCORE   &kp LBKT       &kp RBKT       &kp MINUS      &kp PLUS       &kp EQUAL      &none
+                                                             &trans           &trans         &trans         &trans
             >;
             sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
         };
@@ -170,10 +76,21 @@
             label = "FUN";
 
             bindings = <
-                &reset         &bt BT_CLR     &out OUT_TOG   &trans         &tog QWE       &trans         &kp F7         &kp F8         &kp F9         &kp F12
-                &bootloader    &bt BT_NXT     &trans         &trans         &trans         &trans         &kp F4         &kp F5         &kp F6         &kp F11
-                &trans         &bt BT_PRV     &trans         &trans         &trans         &trans         &kp F1         &kp F2         &kp F3         &kp F10
+                &trans         &trans         &trans         &trans         &trans         &trans         &kp F7         &kp F8         &kp F9         &kp F12
+                &trans         &trans         &trans         &trans         &trans         &trans         &kp F4         &kp F5         &kp F6         &kp F11
+                &trans         &trans         &trans         &trans         &trans         &trans         &kp F1         &kp F2         &kp F3         &kp F10
                                                              &trans         &trans         &trans         &trans
+            >;
+            sensor-bindings = <&inc_dec_kp UP DOWN>;
+        };
+        bluetooth {
+            label = "BTC";
+
+            bindings = <
+                &reset         &none          &none          &none          &none          &out OUT_USB   &bt BT_PRV     &bt BT_NXT     &none          &bt BT_CLR
+                &bootloader    &none          &none          &none          &none          &out OUT_BLE   &bt BT_SEL 3   &bt BT_SEL 4   &none          &none
+                &none          &none          &none          &none          &none          &out OUT_TOG   &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &none
+                                                             &none          &none          &none          &none
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>;
         };
