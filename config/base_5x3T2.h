@@ -10,11 +10,12 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define APT 0
-#define NUM 1
-#define NAV 2
-#define SYM 3
-#define FUN 4
-#define BTC 5
+#define DE  1
+#define NUM 2
+#define NAV 3
+#define SYM 4
+#define FUN 5
+#define BTC 6
 
 &lt {
     quick_tap_ms = <200>;
@@ -33,21 +34,31 @@
             timeout-ms = <40>;
             key-positions = <1 2>;
             bindings = <&kp Q>;
+            layers = <0 1>;
         };
         combo_z {
             timeout-ms = <40>;
             key-positions = <21 22>;
             bindings = <&kp Z>;
+            layers = <0>;
+        };
+        combo_x {
+            timeout-ms = <40>;
+            key-positions = <21 22>;
+            bindings = <&kp X>;
+            layers = <1>;
         };
         combo_v {
             timeout-ms = <40>;
             key-positions = <22 23>;
             bindings = <&kp V>;
+            layers = <0 1>;
         };
         combo_slash {
             timeout-ms = <40>;
             key-positions = <27 28>;
             bindings = <&kp SLASH>;
+            layers = <0 1>;
         };
         combo_enter {
             timeout-ms = <40>;
