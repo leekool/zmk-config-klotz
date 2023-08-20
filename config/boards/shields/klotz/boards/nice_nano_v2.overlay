@@ -12,13 +12,16 @@
         compatible = "pwm-leds";
         label = "Backlight LEDs";
         pwm_led_0 {
-            pwms = <&pwm0 20>; /* LED 0 */
+            pwms = <&pwm0 20 10000 PWM_POLARITY_NORMAL>; /* LED 0 */
+            label = "Backlight LED 0";
         };
         pwm_led_1 {
-            pwms = <&pwm0 22>; /* LED 1 */
+            pwms = <&pwm0 22 10000 PWM_POLARITY_NORMAL>; /* LED 1 */
+            label = "Backlight LED 1";
         };
         pwm_led_2 {
-            pwms = <&pwm0 24>; /* LED 2 */
+            pwms = <&pwm0 24 10000 PWM_POLARITY_NORMAL>; /* LED 2 */
+            label = "Backlight LED 2";
         };
     };
 };
