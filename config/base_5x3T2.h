@@ -10,124 +10,67 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define APT 0
-#define DE  1
-#define NUM 2
-#define NAV 3
-#define SYM 4
-#define FUN 5
-#define BTC 6
+#define NUM 1
+#define NAV 2
+#define SYM 3
+#define FUN 4
+#define BTC 5
 
-&lt {
-    quick_tap_ms = <200>;
-};
+// &lt {
+//     quick_tap_ms = <200>;
+// };
 
 &caps_word {
     continue-list = <UNDERSCORE MINUS BSPC LSHFT RSHFT>;
 };
 
+/ {
+    macros {
+        macro_sch: macro_sch {
+            label = "Macro_SCH";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp S &kp C &kp H>;
+        };
+    };
+};
+
+
+#define COMBO(NAME, BINDINGS, KEYPOS) \
+combo_##NAME { \
+    timeout-ms = <20>; \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS>; \
+};
 
 / {
     combos {
         compatible = "zmk,combos";
 /* usually on base layer */
-        combo_q {
-            timeout-ms = <40>;
-            key-positions = <1 2>;
-            bindings = <&kp Q>;
-            layers = <0 1>;
-        };
-        combo_z {
-            timeout-ms = <40>;
-            key-positions = <21 22>;
-            bindings = <&kp Z>;
-            layers = <0>;
-        };
-        combo_x {
-            timeout-ms = <40>;
-            key-positions = <21 22>;
-            bindings = <&kp X>;
-            layers = <1>;
-        };
-        combo_v {
-            timeout-ms = <40>;
-            key-positions = <22 23>;
-            bindings = <&kp V>;
-            layers = <0 1>;
-        };
-        combo_slash {
-            timeout-ms = <40>;
-            key-positions = <27 28>;
-            bindings = <&kp SLASH>;
-            layers = <0 1>;
-        };
-        combo_enter {
-            timeout-ms = <40>;
-            key-positions = <26 27>;
-            bindings = <&kp ENTER>;
-        };
+        COMBO(q, &kp Q, 2 3)
+        COMBO(z, &kp Z, 21 22)
+        COMBO(v, &kp V, 1 2)
+        COMBO(sch, &macro_sch, 1 3)
+        COMBO(slash, &kp SLASH, 28 29)
+        COMBO(dash, &kp MINUS, 27 28)
+        COMBO(enter, &kp ENTER, 27 28 29)
+        COMBO(esc, &kp ESC, 22 23)
 /* parentheticals */
-        combo_lbrc {
-            timeout-ms = <40>;
-            key-positions = <1 11>;
-            bindings = <&kp LBRC>;
-        };
-        combo_lpar {
-            timeout-ms = <40>;
-            key-positions = <2 12>;
-            bindings = <&kp LPAR>;
-        };
-        combo_lbkt {
-            timeout-ms = <40>;
-            key-positions = <3 13>;
-            bindings = <&kp LBKT>;
-        };
-        combo_lt {
-            timeout-ms = <40>;
-            key-positions = <4 14>;
-            bindings = <&kp LT>;
-        };
-        combo_rbrc {
-            timeout-ms = <40>;
-            key-positions = <8 18>;
-            bindings = <&kp RBRC>;
-        };
-        combo_rpar {
-            timeout-ms = <40>;
-            key-positions = <7 17>;
-            bindings = <&kp RPAR>;
-        };
-        combo_rbkt {
-            timeout-ms = <40>;
-            key-positions = <6 16>;
-            bindings = <&kp RBKT>;
-        };
-        combo_gt {
-            timeout-ms = <40>;
-            key-positions = <5 15>;
-            bindings = <&kp GT>;
-        };
+        COMBO(lbrc, &kp LBRC, 1 11)
+        COMBO(lbkt, &kp LBKT, 2 12)
+        COMBO(lpar, &kp LPAR, 3 13)
+        COMBO(lt, &kp LT, 4 14)
+        COMBO(gt, &kp GT, 5 15)
+        COMBO(rpar, &kp RPAR, 6 16)
+        COMBO(rbkt, &kp RBKT, 7 17)
+        COMBO(rbrc, &kp RBRC, 8 18)
 /* caps */
-        combo_caps-word {
-            timeout-ms = <40>;
-            key-positions = <13 16>;
-            bindings = <&caps_word>;
-        };
-        combo_capslock {
-            timeout-ms = <40>;
-            key-positions = <1 8>;
-            bindings = <&kp CAPSLOCK>;
-        };
+        COMBO(caps, &caps_word, 13 16)
+        COMBO(capslock, &kp CAPSLOCK, 1 8)
 /* deletion */
-        combo_bspc {
-            timeout-ms = <40>;
-            key-positions = <16 17>;
-            bindings = <&kp BSPC>;
-        };
-        combo_delword {
-            timeout-ms = <40>;
-            key-positions = <16 18>;
-            bindings = <&kp LC(BSPC)>;
-        };
+        COMBO(bspc, &kp BSPC, 6 7)
+        COMBO(del, &kp DEL, 7 8)
+        COMBO(delword, &kp LC(BSPC), 6 8)
     };
 };
 
@@ -138,7 +81,7 @@
             label = "homerow mods left";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             quick-tap-ms = <100>;
             // global-quick-tap;
             bindings = <&kp>, <&kp>;
@@ -151,12 +94,26 @@
             label = "homerow mods right";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             quick-tap-ms = <100>;
             // global-quick-tap;
             bindings = <&kp>, <&kp>;
             // opposite side hand keys
             hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31>;
+        };
+
+        my_lt: my_layer_taps {
+            compatible = "zmk,behavior-hold-tap";
+            label = "my layer taps";
+            #binding-cells = <2>;
+            // flavor = "tap-preferred";
+            flavor = "balanced";
+            tapping-term-ms = <150>;
+            quick-tap-ms = <100>;
+            // global-quick-tap;
+            bindings = <&mo &kp>, <&kp>;
+            // non-thumb keys
+            // hold-trigger-key-positions = <0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23>;
         };
 
         dotcol: dot_colon {

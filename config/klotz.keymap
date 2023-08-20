@@ -33,21 +33,10 @@
             label = "APT";
 
             bindings = <
-                &none          &kp W          &kp F          &kp P          &lt BTC B      &kp J          &kp L          &kp U          &kp Y          &none
-                &hl LCTRL R    &hl LALT S     &hl LGUI T     &hl LSHFT H    &hl RALT K     &hr RALT X     &hr RSHFT N    &hr RGUI A     &hr LALT I     &hr RCTRL O
-                &none          &kp C          &kp G          &kp D          &none          &none          &kp M          &comsem        &dotcol        &none
-                                                             &lt NUM ESC    &lt NAV SPACE  &lt SYM E      &lt FUN ENTER
-            >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-        };
-        aptmak_de {
-            label = "DE";
-
-            bindings = <
-                &none          &kp W          &kp F          &kp P          &lt BTC B      &kp J          &kp L          &kp U          &kp Y          &none
-                &hl LCTRL R    &hl LALT S     &hl LGUI T     &hl LSHFT H    &hl RALT K     &hr RALT Z     &hr RSHFT N    &hr RGUI A     &hr LALT I     &hr RCTRL O
-                &none          &kp C          &kp G          &kp D          &none          &none          &kp M          &comsem        &dotcol        &none
-                                                             &lt NUM ESC    &lt NAV SPACE  &lt SYM E      &lt FUN ENTER
+                &none          &kp W          &kp F          &kp P          &kp B            &kp J          &kp L          &kp U          &kp Y          &none
+                &hl LCTRL R    &hl LALT S     &hl LGUI T     &hl LSHFT H    &hl RALT K       &hr RALT X     &hr RSHFT N    &hr RGUI A     &hr LALT I     &hr RCTRL O
+                &none          &kp C          &kp G          &kp D          &none            &none          &kp M          &comsem        &dotcol        &none
+                                                             &my_lt NUM SQT &my_lt NAV SPACE &my_lt SYM E   &my_lt FUN ENTER
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
@@ -55,9 +44,9 @@
             label = "NUM";
 
             bindings = <
-                &none          &kp N9         &kp N8         &kp N7         &none          &kp PLUS       &kp N7         &kp N8         &kp N9         &kp ASTERISK
-                &kp LCTRL      &hl LALT N3    &hl LGUI N2    &hl LSHFT N1   &hl RALT N0    &kp MINUS      &kp N4         &kp N5         &kp N6         &kp SLASH
-                &none          &kp N6         &kp N5         &kp N4         &none          &kp EQUAL      &kp N1         &kp N2         &kp N3         &kp DOT
+                &none          &kp N9         &kp N8         &kp N7         &kp ASTERISK   &kp PLUS       &kp N7         &kp N8         &kp N9         &none
+                &hl LCTRL N0   &hl LALT N6    &hl LGUI N5    &hl LSHFT N4   &hl RALT SLASH &kp MINUS      &kp N4         &kp N5         &kp N6         &kp DOT
+                &none          &kp N3         &kp N2         &kp N1         &none          &kp EQUAL      &kp N1         &kp N2         &kp N3         &none
                                                              &trans         &trans         &kp E          &kp N0
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -71,7 +60,7 @@
                 &none          &kp HOME       &kp PG_DN      &kp END         &kp C_BRI_DN   &kp C_BRI_UP   &kp HOME       &kp PG_UP      &kp END        &none
                                                              &trans          &trans         &trans         &trans
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
         };
         symbols {
             label = "SYM";
@@ -88,10 +77,10 @@
             label = "FUN";
 
             bindings = <
-                &trans         &trans         &trans         &trans         &tog DE        &trans         &kp F7         &kp F8         &kp F9         &kp F12
-                &trans         &trans         &trans         &trans         &trans         &trans         &kp F4         &kp F5         &kp F6         &kp F11
-                &trans         &trans         &trans         &trans         &trans         &trans         &kp F1         &kp F2         &kp F3         &kp F10
-                                                             &trans         &trans         &trans         &trans
+                &none          &bootloader    &none          &none          &tog DE        &kp F12        &kp F7         &kp F8         &kp F9         &none
+                &none          &none          &none          &none          &none          &kp F11        &kp F4         &kp F5         &kp F6         &kp F10
+                &none          &none          &none          &none          &none          &none          &kp F1         &kp F2         &kp F3         &none
+                                                             &my_lt BTC     &trans         &trans         &trans
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>;
         };
