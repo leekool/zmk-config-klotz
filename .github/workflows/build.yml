@@ -30,6 +30,7 @@ jobs:
       matrix: ${{ fromJson(needs.matrix.outputs.build_matrix) }}
     steps:
       - name: Prepare variables
+        id: variables
         shell: sh -x {0}
         env:
           shield: ${{ matrix.shield }}
@@ -75,10 +76,10 @@ jobs:
           mkdir build/artifacts
           if [ -f build/zephyr/zmk.uf2 ]
           then
-            cp build/zephyr/zmk.uf2 "build/artifacts/${{ env.artifact-name }}.uf2"
+            cp build/zephyr/zmk.uf2 "build/artifacts/${{ env.artifact_name }}.uf2"
           elif [ -f build/zephyr/zmk.hex ]
           then
-            cp build/zephyr/zmk.hex "build/artifacts/${{ env.artifact-name }}.hex"
+            cp build/zephyr/zmk.hex "build/artifacts/${{ env.artifact_name }}.hex"
           fi
       - name: Archive (${{ env.display-name }})
         uses: actions/upload-artifact@v3
