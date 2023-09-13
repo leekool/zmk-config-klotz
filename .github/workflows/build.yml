@@ -19,6 +19,7 @@ jobs:
           echo "build_matrix=$(yaml2json build.yaml | jq -c .)" >> $GITHUB_ENV
           yaml2json build.yaml | jq
 
+  build:
     runs-on: ubuntu-latest
     container:
       image: zmkfirmware/zmk-build-arm:stable
