@@ -16,9 +16,9 @@ jobs:
       - id: set-matrix
         name: Fetch Build Matrix
         run: |
-          echo "build_matrix=$(yaml2json '${{ inputs.build_matrix_path }}' | jq -c .)" >> $GITHUB_ENV
-          yaml2json "${{ inputs.build_matrix_path }}" | jq
-  build:
+          echo "build_matrix=$(yaml2json build.yaml | jq -c .)" >> $GITHUB_ENV
+          yaml2json build.yaml | jq
+
     runs-on: ubuntu-latest
     container:
       image: zmkfirmware/zmk-build-arm:stable
