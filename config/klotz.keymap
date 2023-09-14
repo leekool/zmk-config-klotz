@@ -38,7 +38,7 @@
                 &none          &kp C          &kp G          &kp D          &none            &none          &kp M          &comsem        &dotcol        &none
                                                              &my_lt NUM SQT &my_lt NAV SPACE &my_lt SYM E   &my_lt FUN ENTER
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
         };
         numbers {
             label = "NUM";
@@ -49,7 +49,7 @@
                 &none          &kp N3         &kp N2         &kp N1         &none          &kp EQUAL      &kp N1         &kp N2         &kp N3         &none
                                                              &trans         &trans         &kp E          &kp N0
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
         };
         navigation {
             label = "NAV";
@@ -60,7 +60,7 @@
                 &none          &kp HOME       &kp PG_DN      &kp END         &kp C_BRI_DN   &kp C_BRI_UP   &kp HOME       &kp PG_UP      &kp END        &none
                                                              &trans          &trans         &trans         &trans
             >;
-            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN  &inc_dec_kp LEFT RIGHT>;
         };
         symbols {
             label = "SYM";
@@ -71,7 +71,7 @@
                 &none          &kp TILDE      &kp SQT        &kp UNDERSCORE   &kp LBKT       &kp RBKT       &kp MINUS      &kp PLUS       &kp EQUAL      &none
                                                              &trans           &trans         &trans         &trans
             >;
-            sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
         };
         function {
             label = "FUN";
@@ -82,7 +82,7 @@
                 &none          &none          &none          &none          &none          &none          &kp F1         &kp F2         &kp F3         &none
                                                              &mo BTC        &trans         &trans         &trans
             >;
-            sensor-bindings = <&inc_dec_kp UP DOWN>;
+            sensor-bindings = <&inc_dec_kp UP DOWN  &inc_dec_kp LEFT RIGHT>;
         };
         bluetooth {
             label = "BTC";
@@ -93,7 +93,7 @@
                 &none          &none          &none          &none          &none          &out OUT_TOG   &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &none
                                                              &none          &none          &none          &none
             >;
-            sensor-bindings = <&inc_dec_kp UP DOWN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
         };
 
     };

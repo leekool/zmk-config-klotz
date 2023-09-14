@@ -51,9 +51,9 @@ combo_##NAME { \
         COMBO(z, &kp Z, 21 22)
         COMBO(v, &kp V, 1 2)
         COMBO(sch, &macro_sch, 1 3)
-        COMBO(slash, &kp SLASH, 28 29)
-        COMBO(dash, &kp MINUS, 27 28)
-        COMBO(enter, &kp ENTER, 27 28 29)
+        COMBO(slash, &kp SLASH, 27 28)
+        COMBO(dash, &kp MINUS, 26 27)
+        COMBO(enter, &kp ENTER, 26 27 28)
         COMBO(esc, &kp ESC, 22 23)
 /* parentheticals */
         COMBO(lbrc, &kp LBRC, 1 11)
