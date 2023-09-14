@@ -2,6 +2,7 @@
 
 
 &pinctrl {
+    // backlight
     pwm0_default: pwm0_default {
         group1 {
             psels = <NRF_PSEL(PWM_OUT0, 0, 20)>,
@@ -17,6 +18,14 @@
             low-power-enable;
         };
     };
+    // encoder driver
+    //qdec_default: qdec_default {
+    //    group1 {
+    //        psels = <NRF_PSEL(QDEC_A, 1, 11)>,
+    //                <NRF_PSEL(QDEC_B, 1, 10)>;
+    //        bias-pull-up;
+    //    };
+    //};
 };
 
 / {
@@ -41,6 +50,15 @@
     pinctrl-1 = <&pwm0_sleep>;
     pinctrl-names = "default", "sleep";
 };
+
+// Set up the QDEC hardware based driver and give it the same label as the deleted node.
+//encoder: &qdec0 {
+//    status = "okay";
+//    led-pre = <0>;
+//    steps = <12>;
+//    pinctrl-0 = <&qdec_default>;
+//    pinctrl-names = "default";
+//};
 
 
 / {
