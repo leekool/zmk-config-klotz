@@ -25,6 +25,7 @@
 //  -----------------------------------       -----------------------------------
 
 &mt {   
+    flavor = "tap-preferred";
     tapping-term-ms = <185>; 
 };
   
@@ -49,7 +50,7 @@
 
             bindings = <
                 &trans          &trans        &trans         &trans         &trans         &kp DOLLAR     &kp HOME       &kp PG_UP      &kp PG_DN      &kp END
-                &kp LGUI        &kp LALT      &mt LCTRL      &trans         &trans         &kp SEMI       &kp LEFT       &kp UP         &kp DOWN       &kp RIGHT
+                &kp LGUI        &kp LALT      &kp LCTRL      &trans         &trans         &kp SEMI       &kp LEFT       &kp UP         &kp DOWN       &kp RIGHT
                 &mt LSHFT EQUAL &trans        &trans         &trans         &trans         &kp MINUS      &kp EQUAL      &kp PLUS       &trans         &mt RSHFT BSLH
                                                              &trans         &trans         &trans         &trans
             >;
