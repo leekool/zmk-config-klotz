@@ -38,7 +38,7 @@
 
             bindings = <
                 &kp Q          &kp W          &kp F          &kp P           &kp G           &kp J            &kp L           &kp U        &kp Y       &kp APOS
-                &hl LGUI A     &hl LALT R     &hl LCTRL S    &kp T           &kp D           &kp H            &kc N           &hr LCTRL E  &hr LALT I  &hr LGUI O
+                &hl LGUI A     &hl LALT R     &hl LCTRL S    &kp T           &kp D           &kp H            &kp N           &hr LCTRL E  &hr LALT I  &hr LGUI O
                 &hl LSHFT Z    &kp X          &kp C          &kp V           &kp B           &kp K            &kp M           &kp COMMA    &kp DOT     &hr RSHFT FSLH
                                                              &my_lt NAV BSPC &hl LCTRL ENTER &hr RCTRL SPACE  &my_lt NUM TAB
             >;
