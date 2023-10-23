@@ -24,6 +24,10 @@
 // |                         30  | 31  |     |  32 |  33                         |
 //  -----------------------------------       -----------------------------------
 
+// "APT":
+// left - delete
+// right - escape
+
 / {
 
     keymap {
@@ -33,35 +37,48 @@
             label = "APT";
 
             bindings = <
-                &kp Q          &kp W          &kp F          &kp P          &kp B            &kp J          &kp L          &kp U          &kp Y          &none
-                &hl LCTRL R    &hl LALT S     &hl LGUI T     &hl LSHFT H    &hl RALT K       &hr RALT X     &hr RSHFT N    &hr RGUI A     &hr LALT I     &hr RCTRL O
-                &none          &kp C          &kp G          &kp D          &none            &none          &kp M          &comsem        &dotcol        &none
-                                                             &my_lt NUM SQT &my_lt NAV SPACE &my_lt SYM E   &my_lt FUN ENTER
+                &kp Q          &kp W          &kp F          &kp P           &kp G           &kp J            &kp L           &kp U        &kp Y       &kp APOS
+                &hl LGUI A     &hl LALT R     &hl LCTRL S    &kp T           &kp D           &kp H            &kc N           &hr LCTRL E  &hr LALT I  &hr LGUI O
+                &hl LSHFT Z    &kp X          &kp C          &kp V           &kp B           &kp K            &kp M           &kp COMMA    &kp DOT     &hr RSHFT FSLH
+                                                             &my_lt NAV BSPC &hl LCTRL ENTER &hr RCTRL SPACE  &my_lt NUM TAB
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp LA(TAB) LA(LS(TAB))>;
-        };
-        numbers {
-            label = "NUM";
-
-            bindings = <
-                &none          &kp N9         &kp N8         &kp N7         &kp ASTERISK   &kp PLUS       &kp N7         &kp N8         &kp N9         &none
-                &hl LCTRL N0   &hl LALT N6    &hl LGUI N5    &hl LSHFT N4   &hl RALT SLASH &kp MINUS      &kp N4         &kp N5         &kp N6         &kp DOT
-                &none          &kp N3         &kp N2         &kp N1         &none          &kp EQUAL      &kp N1         &kp N2         &kp N3         &none
-                                                             &trans         &trans         &kp E          &kp N0
-            >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp LC(A) LC(X)>;
         };
         navigation {
             label = "NAV";
 
             bindings = <
-                &none          &kp INSERT     &kp UP         &kp BSPC        &kp C_VOL_DN   &kp C_VOL_UP   &kp BSPC       &kp DEL        &kp INSERT     &kp C_PP
-                &kp LCTRL      &hl LALT LEFT  &hl LGUI DOWN  &hl LSHFT RIGHT &kp C_MUTE     &kp LEFT       &kp DOWN       &kp UP         &kp RIGHT      &kp TAB
-                &none          &kp HOME       &kp PG_DN      &kp END         &kp C_BRI_DN   &kp C_BRI_UP   &kp HOME       &kp PG_UP      &kp END        &none
-                                                             &trans          &trans         &trans         &trans
+                &trans          &trans        &trans         &trans         &trans         &kp DOLLAR     &kp HOME       &kp PG_UP      &kp PG_DN      &kp END
+                &kp LGUI        &kp LALT      &hl LCTRL      &trans         &trans         &kp SEMI       &kp LEFT       &kp UP         &kp DOWN       &kp RIGHT
+                &hl LSHFT EQUAL &trans        &trans         &trans         &trans         &kp MINUS      &kp EQUAL      &kp PLUS       &trans         &hr RSHFT BSLH
+                                                             &trans         &trans         &trans         &trans
             >;
-            sensor-bindings = <&inc_dec_kp PG_UP PG_DN  &inc_dec_kp LC(RIGHT) LC(LEFT)>;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN  &inc_dec_kp LC(RIGHT)  LC(LEFT)>;
         };
+        numbers {
+            label = "NUM";
+
+            bindings = <
+                &kp DOLLAR      &kp N7         &kp N8        &kp N9         &lbkt_shft     &kp DOLLAR     &kp EQUAL      &kp MINUS      &kp SEMI       &kp GRAVE
+                &kp PIPE        &kp N4         &kp N5        &kp N6         &lpar_shft     &kp SEMI       &trans         &kp LCTRL      &kp LALT       &kp LGUI
+                &hl LSHFT EQUAL &kp N1         &kp N2        &kp N3         &lbrc_shft     &kp MINUS      &trans         &trans         &trans         &hr RSHFT BSLH
+                                                             &kp N0         &trans         &mo FUN        &trans 
+            >;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp LC(A) LC(X)>;
+        };
+        function {
+            label = "FUN";
+
+            bindings = <
+                &trans          &kp F7        &kp F8         &kp F9         &trans         &trans         &trans         &trans         &trans         &trans
+                &trans          &kp F4        &kp F5         &kp F6         &trans         &trans         &trans         &kp LCTRL      &kp LALT       &kp LGUI
+                &trans          &kp F1        &kp F2         &kp F3         &trans         &trans         &trans         &trans         &trans         &kp LSHFT
+                                                             &kp F10        &trans         &trans         &trans
+            >;
+            sensor-bindings = <&inc_dec_kp UP DOWN  &inc_dec_kp RIGHT LEFT>;
+        };
+
+        // haven't touched past here
         symbols {
             label = "SYM";
 
@@ -72,17 +89,6 @@
                                                              &trans           &trans         &trans         &trans
             >;
             sensor-bindings = <&inc_dec_kp SPACE BSPC  &inc_dec_kp RIGHT LEFT>;
-        };
-        function {
-            label = "FUN";
-
-            bindings = <
-                &none          &bootloader    &none          &none          &none          &kp F12        &kp F7         &kp F8         &kp F9         &none
-                &none          &none          &none          &none          &none          &kp F11        &kp F4         &kp F5         &kp F6         &kp F10
-                &none          &none          &none          &none          &none          &none          &kp F1         &kp F2         &kp F3         &none
-                                                             &mo BTC        &trans         &trans         &trans
-            >;
-            sensor-bindings = <&inc_dec_kp UP DOWN  &inc_dec_kp RIGHT LEFT>;
         };
         bluetooth {
             label = "BTC";
