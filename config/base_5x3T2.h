@@ -22,11 +22,11 @@
 
 / {
     macros {
-        macro_sch: macro_sch {
-            label = "Macro_SCH";
+        macro_const: macro_const {
+            label = "macro_const";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap &kp S &kp C &kp H>;
+            bindings = <&macro_tap &kp C &kp O &kp N &kp S &kp T &kp SPACE>;
         };
     };
 };
@@ -34,7 +34,7 @@
 
 #define COMBO(NAME, BINDINGS, KEYPOS) \
 combo_##NAME { \
-    timeout-ms = <120>; \
+    timeout-ms = <110>; \
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS>; \
 };
@@ -45,6 +45,8 @@ combo_##NAME { \
         COMBO(delete, &kp DEL, 30 31)
         COMBO(fun_escape, &lt FUN ESC, 32 33)
         COMBO(grave, &kp GRAVE, 8 9)
+        COMBO(semi, &kp SEMI, 9 18)
+        COMBO(const, &macro_const, 1 3)
 /* usually on base layer */
         // COMBO(q, &kp Q, 2 3)
         // COMBO(z, &kp Z, 21 22)
@@ -86,12 +88,12 @@ combo_##NAME { \
             bindings = <&kp>, <&kp>;
         };
 
-        mt_115: mt_115 {
+        mt_110: mt_110 {
             compatible = "zmk,behavior-hold-tap";
-            label = "mt_115";
+            label = "mt_110";
             #binding-cells =<2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <115>;
+            tapping-term-ms = <110>;
             quick-tap-ms = <100>;
             require-prior-idle-ms = <100>;
             bindings = <&kp>, <&kp>;

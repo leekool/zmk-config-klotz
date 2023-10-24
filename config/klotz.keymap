@@ -50,19 +50,19 @@
             bindings = <
                 &kp Q           &kp W          &kp F          &kp P            &kp G           &kp J            &kp L           &kp U        &kp Y       &kp APOS
                 &mt_205 LGUI A  &mt LALT R     &mt LCTRL S    &kp T            &kp D           &kp H            &kp N           &mt LCTRL E  &mt LALT I  &mt_205 LGUI O
-                &mt_115 LSHFT Z &kp X          &kp C          &kp V            &kp B           &kp K            &kp M           &kp COMMA    &kp DOT     &mt RSHFT FSLH
-                                                              &lt_150 NAV BSPC &mt LCTRL ENTER &mt RCTRL SPACE  &lt_115 NUM TAB
+                &mt_110 LSHFT Z &kp X          &kp C          &kp V            &kp B           &kp K            &kp M           &kp COMMA    &kp DOT     &mt RSHFT FSLH
+                                                              &lt_150 NAV BSPC &mt LCTRL ENTER &mt RCTRL SPACE  &lt_110 NUM TAB
             >;
-            sensor-bindings = <&inc_dec_kp LA(TAB) LA(LS(TAB)) &inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp LA(TAB) LA(LS(TAB)) &inc_dec_kp PG_UP PG_DN>;
         };
         navigation {
             label = "NAV";
 
             bindings = <
-                &trans          &trans        &trans         &trans         &trans         &kp DOLLAR     &kp HOME       &kp PG_UP      &kp PG_DN      &kp END
-                &kp LGUI        &kp LALT      &kp LCTRL      &trans         &trans         &kp SEMI       &kp LEFT       &kp UP         &kp DOWN       &kp RIGHT
-                &mt LSHFT EQUAL &trans        &trans         &trans         &trans         &kp MINUS      &kp EQUAL      &kp PLUS       &trans         &mt RSHFT BSLH
-                                                             &trans         &trans         &trans         &trans
+                &kp ESC         &kp DELETE    &kp LA(TAB)   &kp LA(LS(TAB)) &trans         &kp DOLLAR     &kp HOME       &kp PG_UP      &kp PG_DN      &kp END
+                &kp LGUI        &kp LALT      &kp LCTRL     &trans          &trans         &kp SEMI       &kp LEFT       &kp UP         &kp DOWN       &kp RIGHT
+                &mt LSHFT EQUAL &trans        &trans        &trans          &trans         &kp MINUS      &kp EQUAL      &kp PLUS       &trans         &mt RSHFT BSLH
+                                                            &trans          &trans         &trans         &trans
             >;
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN  &inc_dec_kp LC(RIGHT)  LC(LEFT)>;
         };
@@ -75,7 +75,7 @@
                 &mt LSHFT EQUAL &kp N1         &kp N2        &kp N3         &lbrc_shft     &kp MINUS      &trans         &trans         &trans         &mt RSHFT BSLH
                                                              &kp N0         &trans         &mo FUN        &trans 
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp LC(A) LC(X)>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN  &inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
         function {
             label = "FUN";
@@ -86,7 +86,7 @@
                 &trans          &kp F1        &kp F2         &kp F3         &trans         &trans         &trans         &trans         &trans         &kp LSHFT
                                                              &kp F10        &trans         &trans         &trans
             >;
-            sensor-bindings = <&inc_dec_kp UP DOWN  &inc_dec_kp RIGHT LEFT>;
+            sensor-bindings = <&inc_dec_kp UP DOWN  &inc_dec_kp DELETE BSPC>;
         };
         bluetooth {
             label = "BTC";
