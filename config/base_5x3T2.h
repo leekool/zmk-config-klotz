@@ -13,12 +13,8 @@
 #define NAV 1
 #define NUM 2
 #define FUN 3
-#define SYM 4
-#define BTC 5
-
-// &lt {
-//     quick_tap_ms = <200>;
-// };
+#define BTC 4
+#define SYM 5
 
 &caps_word {
     continue-list = <UNDERSCORE MINUS BSPC LSHFT RSHFT>;
@@ -47,7 +43,7 @@ combo_##NAME { \
     combos {
         compatible = "zmk,combos";
         COMBO(delete, &kp DEL, 30 31)
-        COMBO(escape, &kp ESC, 32 33)
+        COMBO(fun_escape, &lt FUN ESC, 32 33)
         COMBO(grave, &kp GRAVE, 8 9)
 /* usually on base layer */
         // COMBO(q, &kp Q, 2 3)
@@ -79,44 +75,48 @@ combo_##NAME { \
 
 / {
     behaviors {
-        hl: homerow_mods_left {
+        mt_205: mt_205 {
             compatible = "zmk,behavior-hold-tap";
-            label = "homerow mods left";
-            #binding-cells = <2>;
+            label = "mt_205";
+            #binding-cells =<2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <140>;
-            quick-tap-ms = <100>;
-            // global-quick-tap
+            tapping-term-ms = <205>;
+            quick-tap-ms = <120>;
+            require-prior-idle-ms = <100>;
             bindings = <&kp>, <&kp>;
-            // opposite side hand keys
-            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 32 33>;
         };
 
-        hr: homerow_mods_right {
+        mt_115: mt_115 {
             compatible = "zmk,behavior-hold-tap";
-            label = "homerow mods right";
-            #binding-cells = <2>;
+            label = "mt_115";
+            #binding-cells =<2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <140>;
+            tapping-term-ms = <115>;
             quick-tap-ms = <100>;
-            // global-quick-tap;
+            require-prior-idle-ms = <100>;
             bindings = <&kp>, <&kp>;
-            // opposite side hand keys
-            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31>;
         };
 
-        my_lt: my_layer_taps {
+        lt_150: lt_150 {
             compatible = "zmk,behavior-hold-tap";
-            label = "my layer taps";
+            label = "lt_150";
             #binding-cells = <2>;
             // flavor = "tap-preferred";
             flavor = "balanced";
             tapping-term-ms = <150>;
             quick-tap-ms = <100>;
-            // global-quick-tap;
             bindings = <&mo &kp>, <&kp>;
-            // non-thumb keys
-            // hold-trigger-key-positions = <0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23>;
+        };
+
+        lt_115: lt_115 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "lt_115";
+            #binding-cells = <2>;
+            // flavor = "tap-preferred";
+            flavor = "balanced";
+            tapping-term-ms = <115>;
+            quick-tap-ms = <100>;
+            bindings = <&mo &kp>, <&kp>;
         };
 
         lpar_shft: lpar_shft {
