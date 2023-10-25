@@ -34,7 +34,7 @@
 
 #define COMBO(NAME, BINDINGS, KEYPOS) \
 combo_##NAME { \
-    timeout-ms = <110>; \
+    timeout-ms = <90>; \
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS>; \
 };
@@ -48,8 +48,8 @@ combo_##NAME { \
         COMBO(semi, &kp SEMI, 15 25)
         COMBO(dollar, &kp DOLLAR, 5 15)
         COMBO(equal, &kp EQUAL, 6 16)
-        COMBO(escape, &kp ESC, 0 1)
-        COMBO(lbkt, &lbkt_shft, 4 14)
+        COMBO(escape, &kp ESC, 0 10)
+        COMBO(lpar, &lpar_shft, 4 14)
         COMBO(rbkt, &lbrc_shft, 14 24)
         COMBO(alt_tab, &kp LA(TAB), 18 33)
         COMBO(const, &macro_const, 1 3)
