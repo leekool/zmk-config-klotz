@@ -45,7 +45,12 @@ combo_##NAME { \
         COMBO(delete, &kp DEL, 30 31)
         COMBO(fun_escape, &lt FUN ESC, 32 33)
         COMBO(grave, &kp GRAVE, 8 9)
-        COMBO(semi, &kp SEMI, 9 18)
+        COMBO(semi, &kp SEMI, 15 25)
+        COMBO(dollar, &kp DOLLAR, 5 15)
+        COMBO(equal, &kp EQUAL, 6 16)
+        COMBO(equal, &kp ESC, 0 1)
+        COMBO(equal, &lbkt_shft, 4 14)
+        COMBO(equal, &lbrc_shft, 14 24)
         COMBO(const, &macro_const, 1 3)
 /* usually on base layer */
         // COMBO(q, &kp Q, 2 3)
@@ -88,12 +93,12 @@ combo_##NAME { \
             bindings = <&kp>, <&kp>;
         };
 
-        mt_110: mt_110 {
+        mt_100: mt_100 {
             compatible = "zmk,behavior-hold-tap";
-            label = "mt_110";
+            label = "mt_100";
             #binding-cells =<2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <110>;
+            tapping-term-ms = <100>;
             quick-tap-ms = <100>;
             require-prior-idle-ms = <100>;
             bindings = <&kp>, <&kp>;
