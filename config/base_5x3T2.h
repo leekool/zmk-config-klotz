@@ -48,9 +48,10 @@ combo_##NAME { \
         COMBO(semi, &kp SEMI, 15 25)
         COMBO(dollar, &kp DOLLAR, 5 15)
         COMBO(equal, &kp EQUAL, 6 16)
-        COMBO(equal, &kp ESC, 0 1)
-        COMBO(equal, &lbkt_shft, 4 14)
-        COMBO(equal, &lbrc_shft, 14 24)
+        COMBO(escape, &kp ESC, 0 1)
+        COMBO(lbkt, &lbkt_shft, 4 14)
+        COMBO(rbkt, &lbrc_shft, 14 24)
+        COMBO(alt_tab, &kp LA(TAB), 18 33)
         COMBO(const, &macro_const, 1 3)
 /* usually on base layer */
         // COMBO(q, &kp Q, 2 3)
