@@ -43,7 +43,7 @@ combo_##NAME { \
     combos {
         compatible = "zmk,combos";
         COMBO(delete, &kp DEL, 30 31)
-        COMBO(fun_escape, &lt FUN ESC, 32 33)
+        COMBO(fun_esc, &lt FUN ESC, 32 33)
         COMBO(grave, &kp GRAVE, 8 9)
         COMBO(semi, &kp SEMI, 15 25)
         COMBO(dollar, &kp DOLLAR, 5 15)
@@ -52,32 +52,11 @@ combo_##NAME { \
         COMBO(lpar, &lpar_shft, 4 14)
         COMBO(rbkt, &lbrc_shft, 14 24)
         COMBO(alt_tab, &kp LA(TAB), 18 33)
+        COMBO(f11, &kp F11, 22 30)
+        COMBO(f12, &kp F12, 23 30)
+        COMBO(del_word, &kp LC(BSPC), 13 30)
         COMBO(const, &macro_const, 1 3)
-/* usually on base layer */
-        // COMBO(q, &kp Q, 2 3)
-        // COMBO(z, &kp Z, 21 22)
-        // COMBO(v, &kp V, 1 2)
-        // COMBO(sch, &macro_sch, 1 3)
-        // COMBO(slash, &kp SLASH, 27 28)
-        // COMBO(dash, &kp MINUS, 26 27)
-        // COMBO(enter, &kp ENTER, 26 27 28)
-        // COMBO(esc, &kp ESC, 22 23)
-/* parentheticals */
-        // COMBO(lbrc, &kp LBRC, 1 11)
-        // COMBO(lbkt, &kp LBKT, 2 12)
-        // COMBO(lpar, &kp LPAR, 3 13)
-        // COMBO(lt, &kp LT, 4 14)
-        // COMBO(gt, &kp GT, 5 15)
-        // COMBO(rpar, &kp RPAR, 6 16)
-        // COMBO(rbkt, &kp RBKT, 7 17)
-        // COMBO(rbrc, &kp RBRC, 8 18)
-/* caps */
-        // COMBO(caps, &caps_word, 13 16)
-        // COMBO(capslock, &kp CAPSLOCK, 1 8)
-/* deletion */
-        // COMBO(bspc, &kp BSPC, 6 7)
-        // COMBO(del, &kp DEL, 7 8)
-        // COMBO(delword, &kp LC(BSPC), 6 8)
+        COMBO(caps, &caps_word, 20 29)
     };
 };
 
@@ -94,14 +73,13 @@ combo_##NAME { \
             bindings = <&kp>, <&kp>;
         };
 
-        mt_100: mt_100 {
+        mt_90: mt_90 {
             compatible = "zmk,behavior-hold-tap";
-            label = "mt_100";
+            label = "mt_90";
             #binding-cells =<2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <100>;
-            quick-tap-ms = <100>;
-            require-prior-idle-ms = <100>;
+            flavor = "balanced";
+            tapping-term-ms = <90>;
+            quick-tap-ms = <90>;
             bindings = <&kp>, <&kp>;
         };
 
