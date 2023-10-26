@@ -51,10 +51,10 @@ combo_##NAME { \
         COMBO(escape, &kp ESC, 0 10)
         COMBO(lpar, &lpar_shft, 4 14)
         COMBO(rbkt, &lbrc_shft, 14 24)
-        COMBO(alt_tab, &kp LA(TAB), 18 33)
+        // COMBO(alt_tab, &kp LA(TAB), 18 33)
         COMBO(f11, &kp F11, 22 30)
         COMBO(f12, &kp F12, 23 30)
-        COMBO(del_word, &kp LC(BSPC), 13 30)
+        // COMBO(del_word, &kp LC(BSPC), 12 30)
         COMBO(const, &macro_const, 1 3)
         COMBO(caps, &caps_word, 20 29)
     };
@@ -90,7 +90,7 @@ combo_##NAME { \
             // flavor = "tap-preferred";
             flavor = "balanced";
             tapping-term-ms = <150>;
-            quick-tap-ms = <100>;
+            quick-tap-ms = <130>;
             bindings = <&mo &kp>, <&kp>;
         };
 

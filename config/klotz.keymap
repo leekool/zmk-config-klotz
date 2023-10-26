@@ -59,8 +59,8 @@
             label = "NAV";
 
             bindings = <
-                &kp ESC         &kp DELETE    &kp LA(TAB)   &kp LA(LS(TAB)) &trans         &kp DOLLAR     &kp HOME       &kp PG_UP      &kp PG_DN      &kp END
-                &kp LGUI        &kp LALT      &kp LCTRL     &trans          &trans         &kp SEMI       &kp LEFT       &kp UP         &kp DOWN       &kp RIGHT
+                &kp ESC         &kp UG(LEFT)  &kp LA(TAB)   &kp LA(LS(TAB)) &LG(RIGHT)     &kp DOLLAR     &kp HOME       &kp PG_UP      &kp PG_DN      &kp END
+                &kp LGUI        &kp LALT      &kp LCTRL     &DELETE         &trans         &kp SEMI       &kp LEFT       &kp UP         &kp DOWN       &kp RIGHT
                 &mt LSHFT EQUAL &trans        &trans        &trans          &trans         &kp MINUS      &kp EQUAL      &kp PLUS       &trans         &mt RSHFT BSLH
                                                             &trans          &trans         &trans         &trans
             >;
@@ -93,7 +93,7 @@
 
             bindings = <
                 &none          &none          &none          &none          &none          &out OUT_USB   &bt BT_PRV     &bt BT_NXT     &none          &bt BT_CLR
-                &bootloader    &none          &none          &none          &none          &out OUT_BLE   &bt BT_SEL 3   &bt BT_SEL 4   &none          &none
+                &none          &none          &none          &none          &none          &out OUT_BLE   &bt BT_SEL 3   &bt BT_SEL 4   &none          &none
                 &none          &none          &none          &none          &none          &out OUT_TOG   &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &none
                                                              &none          &none          &none          &none
             >;
