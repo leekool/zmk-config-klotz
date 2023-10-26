@@ -60,7 +60,7 @@
 
             bindings = <
                 &kp ESC         &kp LG(LEFT)  &kp LA(TAB)   &kp LA(LS(TAB)) &kp LG(RIGHT)  &kp DOLLAR     &kp HOME       &kp PG_UP      &kp PG_DN      &kp END
-                &kp LGUI        &kp LALT      &kp LCTRL     &DELETE         &trans         &kp SEMI       &kp LEFT       &kp UP         &kp DOWN       &kp RIGHT
+                &kp LGUI        &kp LALT      &kp LCTRL     &kp DELETE      &trans         &kp SEMI       &kp LEFT       &kp UP         &kp DOWN       &kp RIGHT
                 &mt LSHFT EQUAL &trans        &trans        &trans          &trans         &kp MINUS      &kp EQUAL      &kp PLUS       &trans         &mt RSHFT BSLH
                                                             &trans          &trans         &trans         &trans
             >;
