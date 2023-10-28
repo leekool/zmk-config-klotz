@@ -32,30 +32,30 @@
 };
 
 
-#define COMBO(NAME, MS, BINDINGS, KEYPOS, ...) \
+#define COMBO(NAME, MS, BINDINGS, KEYPOS, LAYERS) \
 combo_##NAME { \
     timeout-ms = <MS>; \
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS>; \
-    layers = <__VA_ARGS__>; \
+    layers = <LAYERS>; \
 };
 
 / {
     combos {
         compatible = "zmk,combos";
-        COMBO(delete, 90, &kp DEL, 30 31)
-        COMBO(fun_esc, 90, &lt FUN ESC, 32 33)
-        COMBO(grave, 90, &kp GRAVE, 8 9)
-        COMBO(semi, 90, &kp SEMI, 15 25)
-        COMBO(dollar, 90, &kp DOLLAR, 5 15)
-        COMBO(equal, 90, &kp EQUAL, 6 16)
-        COMBO(escape, 50, &kp ESC, 0 1)
+        COMBO(delete, 90, &kp DEL, 30 31, 0 1 2 3 4 5)
+        COMBO(fun_esc, 90, &lt FUN ESC, 32 33, 0 1 2 3 4 5)
+        COMBO(grave, 90, &kp GRAVE, 8 9, 0 1 2 3 4 5)
+        COMBO(semi, 90, &kp SEMI, 15 25, 0 1 2 3 4 5)
+        COMBO(dollar, 90, &kp DOLLAR, 5 15, 0 1 2 3 4 5)
+        COMBO(equal, 90, &kp EQUAL, 6 16, 0 1 2 3 4 5)
+        COMBO(escape, 50, &kp ESC, 0 1, 0 1 2 3 4 5)
         COMBO(lpar, 90, &lpar_shft, 4 14, 0 1 2 3 4)
         COMBO(rbkt, 90, &lbrc_shft, 14 24, 0 1 2 3 4)
-        COMBO(f11, 90, &kp F11, 22 30)
-        COMBO(f12, 90, &kp F12, 23 30)
-        COMBO(const, 90, &macro_const, 1 3)
-        COMBO(caps, 90, &caps_word, 20 29)
+        COMBO(f11, 90, &kp F11, 22 30, 0 1 2 3 4 5)
+        COMBO(f12, 90, &kp F12, 23 30, 0 1 2 3 4 5)
+        COMBO(const, 90, &macro_const, 1 3, 0 1 2 3 4)
+        COMBO(caps, 90, &caps_word, 20 29, 0 1 2 3 4 5)
 
         // CS2
         COMBO(cs_n1, 90, &kp N1, 4 14, 5)

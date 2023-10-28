@@ -103,7 +103,7 @@
             label = "CS2";
 
             bindings = <
-                &kp B            &kp Q          &kp W         &kp E         &kp G         &none      &none           &none        &none     &tog 0
+                &kp B            &kp Q          &kp W         &kp E         &kp G         &none      &none           &none        &none     &tog 5
                 &kp TAB          &kp A          &kp S         &kp D         &kp R         &none      &none           &none        &none     &none
                 &kp LSHFT        &kp X          &kp C         &kp V         &kp B         &none      &none           &none        &none     &none
                                                               &kp N3        &kp LCTRL     &none      &none
