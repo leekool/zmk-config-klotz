@@ -60,6 +60,7 @@ combo_##NAME { \
         // CS2
         COMBO(cs_n1, 90, &kp N1, 4 14, 5)
         COMBO(cs_n2, 90, &kp N2, 14 24, 5)
+        COMBO(cs_n5, 90, &kp N5, 24 30, 5)
     };
 };
 
