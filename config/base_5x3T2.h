@@ -49,13 +49,13 @@ combo_##NAME { \
         COMBO(semi, 90, &kp SEMI, 15 25, 0 1 2 3 4 5)
         COMBO(dollar, 90, &kp DOLLAR, 5 15, 0 1 2 3 4 5)
         COMBO(equal, 90, &kp EQUAL, 6 16, 0 1 2 3 4 5)
-        COMBO(escape, 50, &kp ESC, 0 1, 0 1 2 3 4 5)
+        COMBO(escape, 40, &kp ESC, 0 1, 0 1 2 3 4 5)
         COMBO(lpar, 90, &lpar_shft, 4 14, 0 1 2 3 4)
         COMBO(rbkt, 90, &lbrc_shft, 14 24, 0 1 2 3 4)
-        COMBO(f11, 90, &kp F11, 22 30, 0 1 2 3 4 5)
-        COMBO(f12, 90, &kp F12, 23 30, 0 1 2 3 4 5)
+        COMBO(f11, 90, &kp F11, 22 30, 3)
+        COMBO(f12, 90, &kp F12, 23 30, 3)
         COMBO(const, 90, &macro_const, 1 3, 0 1 2 3 4)
-        COMBO(caps, 90, &caps_word, 20 29, 0 1 2 3 4 5)
+        // COMBO(caps, 90, &caps_word, 20 29, 0 1 2 3 4 5)
 
         // CS2
         COMBO(cs_n1, 90, &kp N1, 4 14, 5)
@@ -98,13 +98,13 @@ combo_##NAME { \
             bindings = <&mo &kp>, <&kp>;
         };
 
-        lt_115: lt_115 {
+        lt_110: lt_110 {
             compatible = "zmk,behavior-hold-tap";
-            label = "lt_115";
+            label = "lt_110";
             #binding-cells = <2>;
             // flavor = "tap-preferred";
             flavor = "balanced";
-            tapping-term-ms = <115>;
+            tapping-term-ms = <110>;
             quick-tap-ms = <100>;
             bindings = <&mo &kp>, <&kp>;
         };

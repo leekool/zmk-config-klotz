@@ -51,7 +51,7 @@
                 &kp Q           &kp W          &kp F          &kp P            &kp G           &kp J            &kp L           &kp U        &kp Y       &kp APOS
                 &mt_205 LGUI A  &mt LALT R     &mt LCTRL S    &kp T            &kp D           &kp H            &kp N           &mt LCTRL E  &mt LALT I  &mt_205 LGUI O
                 &mt_90  LSHFT Z &kp X          &kp C          &kp V            &kp B           &kp K            &kp M           &kp COMMA    &kp DOT     &mt_205 RSHFT FSLH
-                                                              &lt_150 NAV BSPC &mt LCTRL ENTER &mt RCTRL SPACE  &lt_115 NUM TAB
+                                                              &lt_150 NAV BSPC &mt LCTRL ENTER &mt RCTRL SPACE  &lt_110 NUM TAB
             >;
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp PG_UP PG_DN>;
         };
