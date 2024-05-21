@@ -47,6 +47,7 @@ combo_##NAME { \
         COMBO(fun_esc, 90, &lt FUN ESC, 32 33, 0 1 2 3 4 5)
         COMBO(grave, 90, &kp GRAVE, 8 9, 0 1 2 3 4 5)
         COMBO(semi, 90, &kp SEMI, 15 25, 0 1 2 3 4 5)
+        COMBO(semi_thumb, 90, &kp SEMI, 15 33, 0 1 2 3 4 5)
         COMBO(dollar, 90, &kp DOLLAR, 5 15, 0 1 2 3 4 5)
         COMBO(equal, 90, &kp EQUAL, 6 16, 0 1 2 3 4 5)
         COMBO(escape, 40, &kp ESC, 0 1, 0 1 2 3 4 5)
