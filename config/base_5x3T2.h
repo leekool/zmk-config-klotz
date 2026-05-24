@@ -78,36 +78,62 @@ combo_##NAME { \
             bindings = <&kp>, <&kp>;
         };
 
-        mt_90: mt_90 {
+        mt_80: mt_80 {
             compatible = "zmk,behavior-hold-tap";
-            label = "mt_90";
+            label = "mt_80";
             #binding-cells =<2>;
             flavor = "balanced";
-            tapping-term-ms = <90>;
-            quick-tap-ms = <90>;
+            tapping-term-ms = <80>;
+            quick-tap-ms = <80>;
             bindings = <&kp>, <&kp>;
         };
 
-        lt_150: lt_150 {
+        lt_140: lt_140 {
             compatible = "zmk,behavior-hold-tap";
-            label = "lt_150";
+            label = "lt_140";
             #binding-cells = <2>;
-            // flavor = "tap-preferred";
             flavor = "balanced";
-            tapping-term-ms = <150>;
-            quick-tap-ms = <130>;
-            bindings = <&mo &kp>, <&kp>;
+            tapping-term-ms = <140>;
+            quick-tap-ms = <120>;
+            bindings = <&mo>, <&kp>;
         };
 
-        lt_110: lt_110 {
+        lt_105: lt_105 {
             compatible = "zmk,behavior-hold-tap";
-            label = "lt_110";
+            label = "lt_105";
             #binding-cells = <2>;
-            // flavor = "tap-preferred";
             flavor = "balanced";
-            tapping-term-ms = <110>;
-            quick-tap-ms = <100>;
-            bindings = <&mo &kp>, <&kp>;
+            tapping-term-ms = <105>;
+            quick-tap-ms = <95>;
+            bindings = <&mo>, <&kp>;
+        };
+
+        mt_140: mt_140 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "mt_140";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <140>;
+            quick-tap-ms = <120>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        lt_140_hp: lt_140_hp {
+            compatible = "zmk,behavior-hold-tap";
+            label = "lt_140_hp";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <140>;
+            quick-tap-ms = <120>;
+            bindings = <&mo>, <&kp>;
+        };
+
+        nav_bspc: nav_bspc {
+            compatible = "zmk,behavior-mod-morph";
+            label = "NAV_BSPC";
+            #binding-cells = <0>;
+            bindings = <&lt_140_hp NAV BSPC>, <&lt_140_hp NAV DEL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         lpar_shft: lpar_shft {
