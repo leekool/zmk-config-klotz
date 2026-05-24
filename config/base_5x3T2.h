@@ -8,6 +8,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/pointing.h>
 
 #define LEE 0
 #define NAV 1
@@ -147,6 +148,13 @@ combo_##NAME { \
             #binding-cells = <0>;
             bindings = <&kp LBRC>, <&kp RBRC>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        rot_msc: rot_msc {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&msc>, <&msc>;
+            tap-ms = <20>;
         };
     };
 };
