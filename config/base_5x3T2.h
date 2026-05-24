@@ -23,7 +23,6 @@
 / {
     macros {
         macro_const: macro_const {
-            label = "macro_const";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_tap &kp C &kp O &kp N &kp S &kp T &kp SPACE>;
@@ -69,7 +68,6 @@ combo_##NAME { \
     behaviors {
         mt_205: mt_205 {
             compatible = "zmk,behavior-hold-tap";
-            label = "mt_205";
             #binding-cells =<2>;
             flavor = "tap-preferred";
             tapping-term-ms = <205>;
@@ -80,7 +78,6 @@ combo_##NAME { \
 
         mt_80: mt_80 {
             compatible = "zmk,behavior-hold-tap";
-            label = "mt_80";
             #binding-cells =<2>;
             flavor = "balanced";
             tapping-term-ms = <80>;
@@ -90,7 +87,6 @@ combo_##NAME { \
 
         lt_140: lt_140 {
             compatible = "zmk,behavior-hold-tap";
-            label = "lt_140";
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <140>;
@@ -100,7 +96,6 @@ combo_##NAME { \
 
         lt_105: lt_105 {
             compatible = "zmk,behavior-hold-tap";
-            label = "lt_105";
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <105>;
@@ -110,7 +105,6 @@ combo_##NAME { \
 
         mt_140: mt_140 {
             compatible = "zmk,behavior-hold-tap";
-            label = "mt_140";
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <140>;
@@ -120,7 +114,6 @@ combo_##NAME { \
 
         lt_140_hp: lt_140_hp {
             compatible = "zmk,behavior-hold-tap";
-            label = "lt_140_hp";
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <140>;
@@ -130,7 +123,6 @@ combo_##NAME { \
 
         nav_bspc: nav_bspc {
             compatible = "zmk,behavior-mod-morph";
-            label = "NAV_BSPC";
             #binding-cells = <0>;
             bindings = <&lt_140_hp NAV BSPC>, <&lt_140_hp NAV DEL>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -138,7 +130,6 @@ combo_##NAME { \
 
         lpar_shft: lpar_shft {
             compatible = "zmk,behavior-mod-morph";
-            label = "LPAR_SHFT";
             #binding-cells = <0>;
             bindings = <&kp LPAR>, <&kp RPAR>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -146,7 +137,6 @@ combo_##NAME { \
 
         lbkt_shft: lbkt_shft {
             compatible = "zmk,behavior-mod-morph";
-            label = "LBKT_SHFT";
             #binding-cells = <0>;
             bindings = <&kp LBKT>, <&kp RBKT>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -154,7 +144,6 @@ combo_##NAME { \
 
         lbrc_shft: lbrc_shft {
             compatible = "zmk,behavior-mod-morph";
-            label = "LBRC_SHFT";
             #binding-cells = <0>;
             bindings = <&kp LBRC>, <&kp RBRC>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
